@@ -1,0 +1,16 @@
+<% include ./partials/header.ejs %>
+    <div class="w-full min-h-screen bg-zinc-800 text-white">
+        <h1 class="bg-fuchsia-400 text-4xl font-bold text-black font-sans flex align-center justify-center">Your Pins</h1>
+        <div class="cards flex flex-wrap gap-10 mt-5">
+            <% user.posts.forEach(function(elem){ %>
+                <div class="card w-52 m-5">
+                    <div class="w-52 h-40 rounded-lg overflow-hidden">
+                        <img class="w-full h-full object-cover" src="/public/images/uploads/<%= elem.image %>" alt="">
+                    </div>
+                    <h5 class="mt-2 text-sm"><%= elem.title %></h5>
+                    <h6 class="mt-2 text-sm"><%= elem.description %></h6>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <% include ./partials/footer.ejs %>
